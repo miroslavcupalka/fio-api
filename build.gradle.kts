@@ -1,11 +1,11 @@
 plugins {
-    kotlin("multiplatform") version "2.2.0" apply false
-    kotlin("jvm") version "2.2.0" apply false
-    kotlin("plugin.serialization") version "2.2.0" apply false
+	alias(libs.plugins.kotlin.multiplatform) apply false
+	alias(libs.plugins.kotlin.jvm) apply false
+	alias(libs.plugins.kotlin.serialization) apply false
 }
 
 allprojects {
-    repositories {
-        mavenCentral()
-    }
+	repositories {
+		mavenCentral()
+	}
 }
