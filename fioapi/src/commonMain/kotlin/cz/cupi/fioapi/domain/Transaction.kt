@@ -1,11 +1,12 @@
 package cz.cupi.fioapi.domain
 
+import com.ionspin.kotlin.bignum.decimal.BigDecimal
 import kotlinx.datetime.LocalDate
 
 data class Transaction(
 	val transactionId: Long,             // column22
 	val date: LocalDate,                 // column0
-	val amount: Double,                  // column1
+	val amount: BigDecimal,              // column1
 	val currency: String,                // column14
 	val counterAccountNumber: String?,   // column2
 	val counterAccountName: String?,     // column10

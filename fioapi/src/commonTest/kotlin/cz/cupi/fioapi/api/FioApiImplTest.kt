@@ -1,5 +1,6 @@
 package cz.cupi.fioapi.api
 
+import com.ionspin.kotlin.bignum.decimal.BigDecimal
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.mock.MockEngine
 import io.ktor.client.engine.mock.respond
@@ -284,7 +285,7 @@ class FioApiImplTest {
         with(result[0]) {
             assertEquals(1234567, transactionId)
             assertEquals(LocalDate(2024, 1, 15), date)
-            assertEquals(500.0, amount)
+            assertEquals(BigDecimal.fromDouble(500.0), amount)
             assertEquals("CZK", currency)
             assertEquals("123456789", counterAccountNumber)
         }

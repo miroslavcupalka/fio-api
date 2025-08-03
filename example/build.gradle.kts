@@ -13,6 +13,7 @@ dependencies {
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
 	implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.7.1-0.6.x-compat")
 	implementation("org.slf4j:slf4j-simple:2.0.9")
+	implementation("com.ionspin.kotlin:bignum:0.3.10")
 }
 
 application {

@@ -1,5 +1,6 @@
 package cz.cupi.fioapi.mapper
 
+import com.ionspin.kotlin.bignum.decimal.BigDecimal
 import cz.cupi.fioapi.domain.Transaction
 import cz.cupi.fioapi.domain.TransactionType
 import cz.cupi.fioapi.dto.FioTransactionDto
@@ -9,7 +10,7 @@ import kotlinx.datetime.LocalDate
 internal fun FioTransactionDto.toDomain(): Transaction = Transaction(
 	transactionId = column22?.value ?: 0L,
 	date = column0?.value ?: LocalDate(1970, 1, 1),
-	amount = column1?.value ?: 0.0,
+	amount = BigDecimal.fromDouble(column1?.value ?: 0.0),
 	currency = column14?.value ?: "",
 	counterAccountNumber = column2?.value,
 	counterAccountName = column10?.value,

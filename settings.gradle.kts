@@ -1,2 +1,2 @@
-rootProject.name = "fioapi-fio-kmp"
+rootProject.name = "fio-api"
 include(":fioapi", ":example")

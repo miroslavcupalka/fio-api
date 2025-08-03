@@ -5,6 +5,7 @@ kotlinx-datetime = "0.7.1-0.6.x-compat"
 kotlinx-serialization = "1.8.1"
 kotlinx-coroutines = "1.10.2"
 slf4j = "2.0.9"
+bignum = "0.3.10"
 
 [libraries]
 # Ktor dependencies
@@ -25,6 +26,9 @@ kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-t
 
 # Other dependencies
 slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
+
+# BigNum - multiplatform BigDecimal
+bignum = { group = "com.ionspin.kotlin", name = "bignum", version.ref = "bignum" }
 
 [bundles]
 ktor-common = ["ktor-client-core", "ktor-client-content-negotiation", "ktor-client-logging", "ktor-serialization-kotlinx-json"]

@@ -30,7 +30,7 @@ fun main(args: Array<String>) = runBlocking {
 
 		println("Transactions from $dateFrom to $dateTo:")
 		transactions.forEach { t ->
-			println("Date: ${t.date} | Amount: ${t.amount} ${t.currency} | Type: ${t.transactionType?.fioLabel} | Counter Account: ${t.counterAccountNumber}")
+			println("Date: ${t.date} | Amount: ${t.amount.formatAmount()} ${t.currency} | Type: ${t.transactionType?.fioLabel} | Counter Account: ${t.counterAccountNumber} | Variable Symbol: ${t.variableSymbol} | Comment: ${t.comment ?: "N/A"}")
 		}
 	} catch (e: FioApiException.NotFound) {
 		println("No transactions for this month or account")
