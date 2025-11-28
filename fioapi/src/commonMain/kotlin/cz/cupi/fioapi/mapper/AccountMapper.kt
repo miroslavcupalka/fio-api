@@ -1,5 +1,6 @@
 package cz.cupi.fioapi.mapper
 
+import com.ionspin.kotlin.bignum.decimal.BigDecimal
 import cz.cupi.fioapi.domain.AccountInfo
 import cz.cupi.fioapi.dto.FioAccountInfoDto
 import cz.cupi.fioapi.dto.FioApiResponse
@@ -10,8 +11,8 @@ internal fun FioAccountInfoDto.toDomain(): AccountInfo = AccountInfo(
 	currency = currency,
 	iban = iban,
 	bic = bic,
-	openingBalance = openingBalance,
-	closingBalance = closingBalance,
+	openingBalance = BigDecimal.fromDouble(openingBalance),
+	closingBalance = BigDecimal.fromDouble(closingBalance),
 	dateStart = dateStart,
 	dateEnd = dateEnd,
 	yearList = yearList,

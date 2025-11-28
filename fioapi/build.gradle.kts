@@ -64,27 +64,27 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             from(components["kotlin"])
-            
-            groupId = "cz.cupi"
+
+            groupId = "com.github.miroslavcupalka"
             artifactId = "fioapi"
             version = "1.0.0"
-            
+
             pom {
                 name.set("Fio API")
                 description.set("Kotlin Multiplatform library for Fio Bank API")
-                url.set("https://github.com/cupi/fio-api")
-                
+                url.set("https://github.com/miroslavcupalka/fio-api")
+
                 licenses {
                     license {
                         name.set("MIT License")
                         url.set("https://opensource.org/licenses/MIT")
                     }
                 }
-                
+
                 developers {
                     developer {
-                        id.set("cupi")
-                        name.set("Cupi")
+                        id.set("miroslavcupalka")
+                        name.set("Miroslav Cupalka")
                     }
                 }
             }

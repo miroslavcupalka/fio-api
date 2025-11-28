@@ -1,5 +1,6 @@
 package cz.cupi.fioapi.domain
 
+import com.ionspin.kotlin.bignum.decimal.BigDecimal
 import kotlinx.datetime.LocalDate
 
 data class AccountInfo(
@@ -8,8 +9,8 @@ data class AccountInfo(
     val currency: String,
     val iban: String,
     val bic: String,
-    val openingBalance: Double,
-    val closingBalance: Double,
+    val openingBalance: BigDecimal,
+    val closingBalance: BigDecimal,
     val dateStart: LocalDate? = null,
     val dateEnd: LocalDate? = null,
     val yearList: Int? = null,

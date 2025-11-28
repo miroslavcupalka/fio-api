@@ -1,8 +1,65 @@
 # FIO API Multiplatform Library (Kotlin)
 
+[![](https://jitpack.io/v/miroslavcupalka/fio-api.svg)](https://jitpack.io/#miroslavcupalka/fio-api)
+
 Kotlin Multiplatform library for accessing FIO Bank API. Supports Android, iOS, JVM and JS projects.
 
 ## Installation
+
+### Gradle (Kotlin DSL)
+
+Add JitPack repository to your `build.gradle.kts`:
+```kotlin
+repositories {
+    mavenCentral()
+    maven { url = uri("https://jitpack.io") }
+}
+```
+
+Add dependency:
+```kotlin
+dependencies {
+    implementation("com.github.miroslavcupalka:fioapi:1.0.0")
+}
+```
+
+### Gradle (Groovy)
+
+Add JitPack repository to your `build.gradle`:
+```groovy
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+```
+
+Add dependency:
+```groovy
+dependencies {
+    implementation 'com.github.miroslavcupalka:fioapi:1.0.0'
+}
+```
+
+### Maven
+
+Add JitPack repository to your `pom.xml`:
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+Add dependency:
+```xml
+<dependency>
+    <groupId>com.github.miroslavcupalka</groupId>
+    <artifactId>fioapi</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
 
 ## Quick Start
 
@@ -82,8 +139,10 @@ Gets basic account information.
 
 ```kotlin
 val accountInfo = fioApi.getAccountInfo()
-println("Account number: ${accountInfo.accountNumber}")
-println("Balance: ${accountInfo.balance} ${accountInfo.currency}")
+println("Account ID: ${accountInfo.accountId}")
+println("Bank ID: ${accountInfo.bankId}")
+println("Opening Balance: ${accountInfo.openingBalance} ${accountInfo.currency}")
+println("Closing Balance: ${accountInfo.closingBalance} ${accountInfo.currency}")
 ```
 
 #### `getAccountStatement(dateFrom: LocalDate, dateTo: LocalDate): AccountStatement`
@@ -110,7 +169,7 @@ val lastStatement = fioApi.getLastAccountStatement()
 data class Transaction(
     val transactionId: Long,
     val date: LocalDate,
-    val amount: Double,
+    val amount: BigDecimal,
     val currency: String,
     val counterAccountNumber: String?,
     val counterAccountName: String?,
@@ -134,14 +193,20 @@ data class Transaction(
 ### AccountInfo
 ```kotlin
 data class AccountInfo(
-    val accountNumber: String,
-    val bankCode: String,
+    val accountId: String,
+    val bankId: String,
     val currency: String,
-    val iban: String?,
-    val bic: String?,
-    val balance: Double,
-    val dateStart: LocalDate?,
-    val dateEnd: LocalDate?
+    val iban: String,
+    val bic: String,
+    val openingBalance: BigDecimal,
+    val closingBalance: BigDecimal,
+    val dateStart: LocalDate? = null,
+    val dateEnd: LocalDate? = null,
+    val yearList: Int? = null,
+    val idList: Int? = null,
+    val idFrom: Long? = null,
+    val idTo: Long? = null,
+    val idLastDownload: Long? = null
 )
 ```
 

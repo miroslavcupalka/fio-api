@@ -17,5 +17,5 @@ dependencies {
 }
 
 application {
-	mainClass.set("cz.gpt.fioexample.MainKt")
+	mainClass.set("cz.cupi.fioexample.MainKt")
 }

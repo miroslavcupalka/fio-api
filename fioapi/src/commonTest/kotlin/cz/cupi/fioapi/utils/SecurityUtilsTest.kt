@@ -9,13 +9,13 @@ class SecurityUtilsTest {
     @Test
     fun `sanitizeToken should remove invalid characters`() {
         // Arrange
-        val dirtyToken = " abc123!@#$%^&*()_-+={[}]|:;\"'<,>.?/"
+        val dirtyToken = " abc123XYZ!@#$%^&*()_-+={[}]|:;\"'<,>.?/"
 
         // Act
         val result = dirtyToken.sanitizeToken()
 
         // Assert
-        assertEquals("abc123_-", result)
+        assertEquals("abc123XYZ_-", result)
     }
 
     @Test
