@@ -66,7 +66,7 @@ publishing {
             from(components["kotlin"])
 
             groupId = "com.github.miroslavcupalka"
-            artifactId = "fioapi"
+            artifactId = "fio-api"
             version = "1.0.0"
 
             pom {

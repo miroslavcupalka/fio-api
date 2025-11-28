@@ -19,7 +19,7 @@ repositories {
 Add dependency:
 ```kotlin
 dependencies {
-    implementation("com.github.miroslavcupalka:fioapi:1.0.0")
+    implementation("com.github.miroslavcupalka:fio-api:1.0.0")
 }
 ```
 
@@ -36,7 +36,7 @@ repositories {
 Add dependency:
 ```groovy
 dependencies {
-    implementation 'com.github.miroslavcupalka:fioapi:1.0.0'
+    implementation 'com.github.miroslavcupalka:fio-api:1.0.0'
 }
 ```
 
@@ -56,7 +56,7 @@ Add dependency:
 ```xml
 <dependency>
     <groupId>com.github.miroslavcupalka</groupId>
-    <artifactId>fioapi</artifactId>
+    <artifactId>fio-api</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
